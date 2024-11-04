@@ -82,7 +82,7 @@ jobs:
       run: cmake --build ${{github.workspace}}\build --config ${{env.BUILD_TYPE}} -j 4
     
     - name: '⬆️ Upload Exe File'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: exeArtifact
         path: "${{github.workspace}}\\release\\bin\\Release"
