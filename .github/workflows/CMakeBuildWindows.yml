@@ -84,7 +84,7 @@ jobs:
     - name: '⬆️ Upload Exe File'
       uses: actions/upload-artifact@v4
       with:
-        name: exeArtifact
+        name: binariesArtifact
         path: "${{github.workspace}}\\release\\bin\\Release"
 
   ReleaseArtifact:
@@ -95,7 +95,7 @@ jobs:
     - name: '⬇️ Download exe'
       uses: actions/download-artifact@v4
       with:
-        name: binaries
+        name: binariesArtifact
         
     - name: '📃 Output Current Files'
       run: ls -R
