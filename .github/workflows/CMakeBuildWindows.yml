@@ -101,8 +101,9 @@ jobs:
       run: ls -R
 
     - name: '🏷️ Add binaries to Release Tag'
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
+        tag_name: Continuous
         files: |
           hipims-flood.exe
           hipims-flood-mgpus.exe
