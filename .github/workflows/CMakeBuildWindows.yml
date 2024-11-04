@@ -86,3 +86,26 @@ jobs:
       with:
         name: exeArtifact
         path: "${{github.workspace}}\\release\\bin\\Release"
+
+  ReleaseArtifact:
+    name: '🚀 Release Project'
+    runs-on: ubuntu-latest
+    needs: BuildForWindows
+    steps:
+    - name: '⬇️ Download exe'
+      uses: actions/download-artifact@v4
+      with:
+        name: binaries
+        
+    - name: '📃 Output Current Files'
+      run: ls -R
+
+    - name: '🏷️ Add binaries to Release Tag'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          hipims-flood.exe
+          hipims-flood-mgpus.exe
+          hipims-landslide.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
