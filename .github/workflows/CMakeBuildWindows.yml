@@ -85,4 +85,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: exeArtifact
-        path: "${{github.workspace}}/build/release/bin/Release"
+        path: "${{github.workspace}}\\release\\bin\\Release"
